@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myAngularProject';
+  constructor(){
+    fetch('https://myexpressapp1.azurewebsites.net/users').then(response => response.text())
+    .then(result => {
+        console.log(result);
+        alert(result);
+    });
+  }
 }
